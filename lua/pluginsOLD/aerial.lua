@@ -6,7 +6,6 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	keys = {
-		{ "<leader>O", ":AerialToggle<CR>", desc = "[O]verview" }, 
-		{ "<leader>o", ":AerialNavToggle<CR>", desc = "[O]pen quickOverview" },
+		{ "<leader>o", ":AerialToggle<CR>", desc = "[O]verview" },
 	},
 }
