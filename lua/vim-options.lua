@@ -1,10 +1,6 @@
 -- Set language
 vim.cmd("language en_US")
 
--- Set leader keys
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 -- Configure clipboard to use system clipboard
 vim.opt.clipboard = "unnamedplus"
 
@@ -61,8 +57,8 @@ vim.o.timeout = true
 vim.opt.autoindent = true
 
 -- Set tabulation characteristics
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 
 -- Convert tabs to spaces
 vim.opt.expandtab = true

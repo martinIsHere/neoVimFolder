@@ -3,6 +3,9 @@ vim.g.mapleader = " "
 
 vim.opt.clipboard = "unnamedplus"
 
+-- set colorscheme
+vim.cmd[[colorscheme zaibatsu]]
+
 -- setup lazy
 require("config.lazy")
 
@@ -11,8 +14,8 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Set tab behavior
-vim.opt.tabstop = 4       -- Number of spaces per tab
-vim.opt.shiftwidth = 4    -- Indentation width
+vim.opt.tabstop = 2       -- Number of spaces per tab
+vim.opt.shiftwidth = 2    -- Indentation width
 vim.opt.expandtab = true  -- Use spaces instead of tabs
 
 vim.opt.clipboard = "unnamedplus"
@@ -44,7 +47,6 @@ vim.opt.hlsearch = true
 
 require("vim-options")
 require("vim-keybinds")
-require("set-mason-git-dirs-safe")
 
 -- require("lazy").setup("plugins", { debug = true }, { change_detection = { notify = false } })
 
@@ -85,8 +87,12 @@ vim.opt.cursorline = true
 -- Set the number of screen lines to keep above and below the cursor
 vim.opt.scrolloff = 10
 
--- Bind '¤' to act like the '$' command in normal mode
-vim.api.nvim_set_keymap('n', '\u{00A4}', '$', { noremap = true, silent = true })
+-- Map '¤' to '$' in normal, visual, select, and operator-pending modes
+vim.api.nvim_set_keymap('n', '\u{00A4}', '$', { noremap = true, silent = true }) -- Normal mode
+vim.api.nvim_set_keymap('v', '\u{00A4}', '$', { noremap = true, silent = true }) -- Visual mode
+vim.api.nvim_set_keymap('x', '\u{00A4}', '$', { noremap = true, silent = true }) -- Visual block mode
+vim.api.nvim_set_keymap('s', '\u{00A4}', '$', { noremap = true, silent = true }) -- Select mode
+vim.api.nvim_set_keymap('o', '\u{00A4}', '$', { noremap = true, silent = true }) -- Operator-pending mode
 
 vim.keymap.set('n', 'dil', "dd:let @+=matchlist(strtrans(@+),'[ ]*\\zs.*\\ze\\^@')[0]<CR>")
 
