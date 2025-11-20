@@ -42,6 +42,7 @@ return {
 			end, { desc = "[F]ind [N]eovim files" })
 		end,
 	},
+
 	{
 		"nvim-telescope/telescope-ui-select.nvim",
 		config = function()
@@ -51,10 +52,20 @@ return {
 						require("telescope.themes").get_dropdown({}),
 					},
 				},
+				defaults = {
+					layout_strategy = "vertical",
+					layout_config = {
+						height = 0.99,
+						width = 0.90,
+						preview_cutoff = 20,
+						preview_height = 0.2,
+					},
+				},
 			})
 			require("telescope").load_extension("ui-select")
 		end,
 	},
+
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
 		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
