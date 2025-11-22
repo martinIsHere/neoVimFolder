@@ -63,8 +63,8 @@ vim.opt.shiftwidth = 2
 -- Convert tabs to spaces
 vim.opt.expandtab = true
 
--- Disable text wrapping
-vim.opt.wrap = false
+-- Enable text wrapping
+vim.opt.wrap = true
 
 -- Case sensitivity in search
 vim.opt.ignorecase = true
