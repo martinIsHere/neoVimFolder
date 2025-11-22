@@ -18,6 +18,15 @@
         {
             "command": 
             {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "id": "User.splitPane.A6751878"
+        },
+        {
+            "command": 
+            {
                 "action": "moveFocus",
                 "direction": "down"
             },
@@ -28,25 +37,8 @@
             "id": "User.find"
         },
         {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "id": "User.splitPane.A6751878"
-        },
-        {
             "command": "openCWD",
             "id": "User.openCWD"
-        },
-        {
-            "command": 
-            {
-                "action": "sendInput",
-                "input": "\u001b[C"
-            },
-            "id": "User.sendInput.86D5A3"
         },
         {
             "command": 
@@ -60,9 +52,9 @@
             "command": 
             {
                 "action": "sendInput",
-                "input": "\u001b[1;5D"
+                "input": "\u001b[C"
             },
-            "id": "User.sendInput.163CC213"
+            "id": "User.sendInput.86D5A3"
         },
         {
             "command": 
@@ -71,6 +63,14 @@
                 "direction": "left"
             },
             "id": "User.moveFocus.2A0DA8E0"
+        },
+        {
+            "command": 
+            {
+                "action": "sendInput",
+                "input": "\u001b[1;5D"
+            },
+            "id": "User.sendInput.163CC213"
         },
         {
             "command": 
@@ -97,7 +97,7 @@
             "id": "User.moveFocus.6CD791B"
         }
     ],
-    "compatibility.allowHeadless": true,
+    "compatibility.allowHeadless": false,
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -105,8 +105,12 @@
     "keybindings": 
     [
         {
+            "id": "User.moveFocus.6CD791B",
+            "keys": "ctrl+alt+shift+k"
+        },
+        {
             "id": null,
-            "keys": "ctrl+shift+5"
+            "keys": "ctrl+shift+2"
         },
         {
             "id": "User.sendInput.5AD15B74",
@@ -114,19 +118,15 @@
         },
         {
             "id": null,
-            "keys": "ctrl+shift+2"
-        },
-        {
-            "id": "User.moveFocus.6CD791B",
-            "keys": "ctrl+alt+shift+k"
-        },
-        {
-            "id": null,
-            "keys": "ctrl+shift+4"
+            "keys": "ctrl+shift+5"
         },
         {
             "id": null,
             "keys": "ctrl+shift+8"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+4"
         },
         {
             "id": "User.sendInput.86D5A3",
