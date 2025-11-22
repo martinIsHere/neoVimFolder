@@ -80,6 +80,8 @@ return {
 				map("<leader>e", vim.diagnostic.open_float, "Open diagnostic")
 			end
 
+
+
 			-- Setup LSP servers with on_attach for keybindings
 			vim.lsp.config("clangd", { on_attach = on_attach, flags = {} })
 			vim.lsp.enable({ "clangd" })
@@ -96,6 +98,14 @@ return {
 			-- lspconfig.pylsp.setup({ on_attach = on_attach })
 			-- lspconfig.zls.setup({ on_attach = on_attach })
 			-- lspconfig.ts_ls.setup({ on_attach = on_attach })
+
+      settings = {
+        Lua ={
+          workspace = {
+            checkThirdParty = false,
+          },
+        },
+      }
 		end,
 	},
 	-- nvim-lint configuration for linting

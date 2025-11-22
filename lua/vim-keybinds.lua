@@ -22,13 +22,13 @@ vim.api.nvim_set_keymap(
 	"n",
 	"t",
 	"}",
-	{ noremap = true, silent = true, desc = "[T]ake step forward to next paragraph" }
+	{ noremap = true, silent = true, desc = "[T]o next paragraph" }
 )
 vim.api.nvim_set_keymap(
 	"n",
 	"T",
 	"{",
-	{ noremap = true, silent = true, desc = "[T]ake step backward to next paragraph" }
+	{ noremap = true, silent = true, desc = "[T]o previous paragraph" }
 )
 
 -- removes the ^M line endings when copying from windows to wsl
