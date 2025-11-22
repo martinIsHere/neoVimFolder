@@ -18,6 +18,8 @@ vim.api.nvim_set_keymap(
 -- mapping "t"
 pcall(vim.api.nvim_del_keymap, "n", "t")
 pcall(vim.api.nvim_del_keymap, "n", "T")
+pcall(vim.api.nvim_del_keymap, "v", "t")
+pcall(vim.api.nvim_del_keymap, "v", "T")
 vim.api.nvim_set_keymap(
 	"n",
 	"t",
@@ -26,6 +28,18 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
 	"n",
+	"T",
+	"{",
+	{ noremap = true, silent = true, desc = "[T]o previous paragraph" }
+)
+vim.api.nvim_set_keymap(
+	"v",
+	"t",
+	"}",
+	{ noremap = true, silent = true, desc = "[T]o next paragraph" }
+)
+vim.api.nvim_set_keymap(
+	"v",
 	"T",
 	"{",
 	{ noremap = true, silent = true, desc = "[T]o previous paragraph" }
