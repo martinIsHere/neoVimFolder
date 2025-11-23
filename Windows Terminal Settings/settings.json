@@ -6,6 +6,14 @@
         {
             "command": 
             {
+                "action": "sendInput",
+                "input": "\u001b[B"
+            },
+            "id": "User.sendInput.42123734"
+        },
+        {
+            "command": 
+            {
                 "action": "copy",
                 "singleLine": false
             },
@@ -27,14 +35,22 @@
         {
             "command": 
             {
-                "action": "moveFocus",
-                "direction": "down"
+                "action": "sendInput",
+                "input": "\u001b[A"
             },
-            "id": "User.moveFocus.F747588A"
+            "id": "User.sendInput.4B548C6C"
         },
         {
             "command": "find",
             "id": "User.find"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "down"
+            },
+            "id": "User.moveFocus.F747588A"
         },
         {
             "command": "openCWD",
@@ -59,18 +75,18 @@
         {
             "command": 
             {
-                "action": "moveFocus",
-                "direction": "left"
-            },
-            "id": "User.moveFocus.2A0DA8E0"
-        },
-        {
-            "command": 
-            {
                 "action": "sendInput",
                 "input": "\u001b[1;5D"
             },
             "id": "User.sendInput.163CC213"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "left"
+            },
+            "id": "User.moveFocus.2A0DA8E0"
         },
         {
             "command": 
@@ -100,17 +116,13 @@
     "compatibility.allowHeadless": false,
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "disableAnimations": true,
     "keybindings": 
     [
         {
-            "id": "User.moveFocus.6CD791B",
-            "keys": "ctrl+alt+shift+k"
-        },
-        {
             "id": null,
-            "keys": "ctrl+shift+2"
+            "keys": "ctrl+shift+5"
         },
         {
             "id": "User.sendInput.5AD15B74",
@@ -118,7 +130,19 @@
         },
         {
             "id": null,
-            "keys": "ctrl+shift+5"
+            "keys": "ctrl+shift+2"
+        },
+        {
+            "id": "User.moveFocus.6CD791B",
+            "keys": "ctrl+alt+shift+k"
+        },
+        {
+            "id": "User.sendInput.42123734",
+            "keys": "alt+j"
+        },
+        {
+            "id": "User.sendInput.4B548C6C",
+            "keys": "alt+k"
         },
         {
             "id": null,
@@ -145,12 +169,12 @@
             "keys": "ctrl+shift+7"
         },
         {
-            "id": "User.splitPane.A6751878",
-            "keys": "alt+shift+d"
-        },
-        {
             "id": null,
             "keys": "ctrl+shift+3"
+        },
+        {
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
         },
         {
             "id": null,
@@ -158,11 +182,11 @@
         },
         {
             "id": null,
-            "keys": "ctrl+alt+2"
+            "keys": "ctrl+alt+9"
         },
         {
             "id": null,
-            "keys": "ctrl+alt+9"
+            "keys": "ctrl+alt+2"
         },
         {
             "id": null,
@@ -170,19 +194,19 @@
         },
         {
             "id": null,
+            "keys": "ctrl+alt+7"
+        },
+        {
+            "id": null,
             "keys": "ctrl+alt+4"
         },
         {
             "id": null,
-            "keys": "ctrl+alt+7"
+            "keys": "ctrl+alt+6"
         },
         {
             "id": "User.moveFocus.87C324ED",
             "keys": "ctrl+alt+shift+l"
-        },
-        {
-            "id": null,
-            "keys": "ctrl+alt+6"
         },
         {
             "id": null,
@@ -219,6 +243,11 @@
     ],
     "newTabMenu": 
     [
+        {
+            "icon": null,
+            "profile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+            "type": "profile"
+        },
         {
             "type": "remainingProfiles"
         }
@@ -268,10 +297,23 @@
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
+                "backgroundImage": "desktopWallpaper",
+                "backgroundImageOpacity": 0.38,
+                "cursorShape": "vintage",
+                "experimental.retroTerminalEffect": false,
+                "font": 
+                {
+                    "face": "JetBrainsMono Nerd Font Mono"
+                },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
-                "name": "PowerShell",
-                "source": "Windows.Terminal.PowershellCore"
+                "intenseTextStyle": "all",
+                "name": "PowerShell Core",
+                "opacity": 100,
+                "padding": "20",
+                "source": "Windows.Terminal.PowershellCore",
+                "tabTitle": "PS-CORE",
+                "useAcrylic": false
             },
             {
                 "altGrAliasing": true,
