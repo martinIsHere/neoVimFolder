@@ -4,7 +4,7 @@ vim.g.mapleader = " "
 vim.opt.clipboard = "unnamedplus"
 
 -- set colorscheme
-vim.cmd[[colorscheme zaibatsu]]
+vim.cmd[[colorscheme koehler]]
 
 -- setup lazy
 require("config.lazy")
@@ -21,6 +21,17 @@ vim.opt.expandtab = true  -- Use spaces instead of tabs
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.encoding = "utf-8"
+
+-- Use PowerShell Core if you have it (recommended)
+vim.opt.shell = "pwsh.exe"  -- path usually on PATH as "pwsh.exe"
+
+-- Or use Windows PowerShell if you prefer
+-- vim.opt.shell = "powershell.exe"
+
+-- Optional: nicer flags for running shell commands
+vim.opt.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
+vim.opt.shellquote = ""
+vim.opt.shellxquote = ""
 
 -- Enable mouse support
 vim.opt.mouse = "a"

@@ -1,7 +1,16 @@
 -- vim.api.nvim_set_keymap("i", "jk", "<ESCAPE>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>w", "<cmd>w<CR>", { noremap = true, silent = true, desc = "[W]rite buffer" })
 
+-- edit config bind
+vim.api.nvim_set_keymap("n", "<leader>evc", "<cmd>exe 'edit' stdpath('config') .. '/init.lua'<CR>", {noremap = true, silent = true, desc = "[E]dit Neo[V]im [C]onfig"})
+
 -- split keybind
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>ts",
+	"<cmd>tab split<CR>",
+	{ noremap = true, silent = true, desc = "[T]ab-[S]plit current buffer" }
+)
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>s",
