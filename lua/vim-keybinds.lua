@@ -2,7 +2,34 @@
 vim.api.nvim_set_keymap("n", "<leader>w", "<cmd>w<CR>", { noremap = true, silent = true, desc = "[W]rite buffer" })
 
 -- edit config bind
-vim.api.nvim_set_keymap("n", "<leader>evc", "<cmd>exe 'edit' stdpath('config') .. '/init.lua'<CR>", {noremap = true, silent = true, desc = "[E]dit Neo[V]im [C]onfig"})
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>evc",
+	"<cmd>exe 'edit' stdpath('config') .. '/init.lua'<CR>",
+	{ noremap = true, silent = true, desc = "[E]dit Neo[V]im [C]onfig" }
+)
+
+-- copy path to cwd
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>dq",
+	"<cmd>let @* = '\"' . getcwd() . '\"'<CR>",
+	{ noremap = true, silent = true, desc = "[Y]ank [D]irectoy [Q]uoted" }
+)
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>dp",
+	"<cmd>let @* = '\"' . getcwd() . '\"'<CR>",
+	{ noremap = true, silent = true, desc = "[Y]ank [D]irectoy [P]ath" }
+)
+
+-- print current working directoy
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>G",
+	"<cmd>pwd<CR>",
+	{ noremap = true, silent = true, desc = "print current working directoy" }
+)
 
 -- split keybind
 vim.api.nvim_set_keymap(
@@ -29,30 +56,10 @@ pcall(vim.api.nvim_del_keymap, "n", "t")
 pcall(vim.api.nvim_del_keymap, "n", "T")
 pcall(vim.api.nvim_del_keymap, "v", "t")
 pcall(vim.api.nvim_del_keymap, "v", "T")
-vim.api.nvim_set_keymap(
-	"n",
-	"t",
-	"}",
-	{ noremap = true, silent = true, desc = "[T]o next paragraph" }
-)
-vim.api.nvim_set_keymap(
-	"n",
-	"T",
-	"{",
-	{ noremap = true, silent = true, desc = "[T]o previous paragraph" }
-)
-vim.api.nvim_set_keymap(
-	"v",
-	"t",
-	"}",
-	{ noremap = true, silent = true, desc = "[T]o next paragraph" }
-)
-vim.api.nvim_set_keymap(
-	"v",
-	"T",
-	"{",
-	{ noremap = true, silent = true, desc = "[T]o previous paragraph" }
-)
+vim.api.nvim_set_keymap("n", "t", "}", { noremap = true, silent = true, desc = "[T]o next paragraph" })
+vim.api.nvim_set_keymap("n", "T", "{", { noremap = true, silent = true, desc = "[T]o previous paragraph" })
+vim.api.nvim_set_keymap("v", "t", "}", { noremap = true, silent = true, desc = "[T]o next paragraph" })
+vim.api.nvim_set_keymap("v", "T", "{", { noremap = true, silent = true, desc = "[T]o previous paragraph" })
 
 -- removes the ^M line endings when copying from windows to wsl
 vim.api.nvim_set_keymap(
