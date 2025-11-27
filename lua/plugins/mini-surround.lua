@@ -14,10 +14,8 @@ return {
       },
     })
   local wk = require("which-key")
-  wk.register({
-    g = {
-      s = { name = "+surround" },  -- label shown when you press g
-    },
-  }, { mode = "n" })
+  wk.add({
+      { 'g', name = '+surround', mode = {'n'}},
+  })
   end,
 }

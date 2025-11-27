@@ -1,54 +1,90 @@
--- vim.api.nvim_set_keymap("i", "jk", "<ESCAPE>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>w", "<cmd>w<CR>", { noremap = true, silent = true, desc = "[W]rite buffer" })
+-- map function
+local nmap = function(key, func, _desc)
+  vim.api.nvim_set_keymap(
+    "n",
+    key,
+    func,
+    { noremap = true, silent = true, desc = _desc }
+  )
+end
 
--- edit config bind
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>evc",
-	"<cmd>exe 'edit' stdpath('config') .. '/init.lua'<CR>",
-	{ noremap = true, silent = true, desc = "[E]dit Neo[V]im [C]onfig" }
-)
+local vmap = function(key, func, _desc)
+  vim.api.nvim_set_keymap(
+    "v",
+    key,
+    func,
+    { noremap = true, silent = true, desc = _desc }
+  )
+end
+
+-- vim.api.nvim_set_keymap("i", "jk", "<ESCAPE>", { noremap = true, silent = true })
+nmap("<leader>w", "<cmd>w<cr>", "[W]rite buffer")
+-- vim.api.nvim_set_keymap("n", "<leader>w", "<cmd>w<CR>", { noremap = true, silent = true, desc = "[W]rite buffer" })
+
+-- delete buffer
+nmap("<leader>bd", "<cmd>bd<cr>", "buffer delete")
+
+-- open new buffer
+nmap("<leader>bo", "<cmd>enew<cr>", "buffer open")
 
 -- copy path to cwd
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>dq",
-	"<cmd>let @* = '\"' . getcwd() . '\"'<CR>",
-	{ noremap = true, silent = true, desc = "[Y]ank [D]irectoy [Q]uoted" }
+nmap(
+  "<leader>dq",
+  "<cmd>let @* = '\"' . getcwd() . '\"'<CR>",
+  "[Y]ank [D]irectoy [Q]uoted"
 )
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>dp",
-	"<cmd>let @* = '\"' . getcwd() . '\"'<CR>",
-	{ noremap = true, silent = true, desc = "[Y]ank [D]irectoy [P]ath" }
+nmap(
+  "<leader>dp",
+  "<cmd>let @* = getcwd()<CR>",
+  "[Y]ank [D]irectoy [P]ath"
 )
 
 -- print current working directoy
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>G",
-	"<cmd>pwd<CR>",
-	{ noremap = true, silent = true, desc = "print current working directoy" }
+nmap(
+  "<leader>G",
+  "<cmd>pwd<CR>",
+  "print current working directoy" 
+)
+
+-- terminal
+nmap(
+  "<leader>zz",
+  "<cmd>vsplit +terminal<CR>",
+  "Open terminal"
+)
+nmap(
+  "<leader>ZZ",
+  "<cmd>split +terminal<CR>",
+  "Open terminal"
+)
+nmap(
+  "<leader>zx",
+  "<cmd>vsplit +terminal<CR>",
+  "Open terminal"
 )
 
 -- split keybind
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>ts",
-	"<cmd>tab split<CR>",
-	{ noremap = true, silent = true, desc = "[T]ab-[S]plit current buffer" }
+nmap(
+  "<leader>ts",
+  "<cmd>tab split<CR>",
+  "[T]ab-[S]plit current buffer"
 )
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>s",
-	"<cmd>vsp<CR>",
-	{ noremap = true, silent = true, desc = "[S]plit vertically" }
+nmap(
+  "<leader>s",
+  "<cmd>vsp<CR>",
+  "[S]plit vertically"
 )
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>S",
-	"<cmd>sp<CR>",
-	{ noremap = true, silent = true, desc = "[S]plit horizontally" }
+nmap(
+  "<leader>S",
+  "<cmd>sp<CR>",
+  "[S]plit horizontally"
+)
+
+-- quit buffer
+nmap(
+	"<leader>Q",
+	"<cmd>q<CR>",
+	"QUIT"
 )
 
 -- mapping "t"
@@ -56,29 +92,26 @@ pcall(vim.api.nvim_del_keymap, "n", "t")
 pcall(vim.api.nvim_del_keymap, "n", "T")
 pcall(vim.api.nvim_del_keymap, "v", "t")
 pcall(vim.api.nvim_del_keymap, "v", "T")
-vim.api.nvim_set_keymap("n", "t", "}", { noremap = true, silent = true, desc = "[T]o next paragraph" })
-vim.api.nvim_set_keymap("n", "T", "{", { noremap = true, silent = true, desc = "[T]o previous paragraph" })
-vim.api.nvim_set_keymap("v", "t", "}", { noremap = true, silent = true, desc = "[T]o next paragraph" })
-vim.api.nvim_set_keymap("v", "T", "{", { noremap = true, silent = true, desc = "[T]o previous paragraph" })
+nmap("t", "}", "[T]o next paragraph")
+nmap("T", "{", "[T]o previous paragraph")
+vmap("t", "}", "[T]o next paragraph")
+vmap("T", "{", "[T]o previous paragraph")
 
 -- removes the ^M line endings when copying from windows to wsl
-vim.api.nvim_set_keymap(
-	"n",
+nmap(
 	"<leader>cm",
 	":let @/ = ''<CR>:%s/\\r//g<CR>",
-	{ noremap = true, silent = true, desc = "Removes [C]opied line endings [M]^ from file." }
+	"Removes [C]opied line endings [M]^ from file."
 )
 
 -- copy path to current buffer to system clipboard
-vim.api.nvim_set_keymap(
-	"n",
+nmap(
 	"<leader>ybn",
 	":let @+ = expand(' % ')<CR>",
-	{ noremap = true, silent = true, desc = "[Y]ank [B]uffer [N]ame to clipboard" }
+	"[Y]ank [B]uffer [N]ame to clipboard"
 )
-vim.api.nvim_set_keymap(
-	"n",
+nmap(
 	"<leader>yfp",
 	":let @+ = expand('%:p')<CR>",
-	{ noremap = true, silent = true, desc = "[Y]ank [F]ile [P]ath to clipboard" }
+	"[Y]ank [F]ile [P]ath to clipboard"
 )

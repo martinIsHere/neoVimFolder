@@ -5,7 +5,7 @@ return { --
 		require("oil").setup({
 			keymaps = {
 				["<leader>cd"] = { "actions.cd", mode = "n", silent = true },
-				["<leader>z"] = { "actions.open_terminal", mode = "n", silent = true },
+				["<leader>zh"] = { "actions.open_terminal", mode = "n", silent = true },
 				["<leader>x"] = { "actions.open_external", mode = "n", silent = true },
 			},
 		})

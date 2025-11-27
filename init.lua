@@ -59,8 +59,6 @@ vim.opt.hlsearch = true
 require("vim-options")
 require("vim-keybinds")
 
--- require("lazy").setup("plugins", { debug = true }, { change_detection = { notify = false } })
-
 -- My lazily added custom functions
 -- Function to jump to the next line with the same content
 function JumpToNextMatchingLine()
