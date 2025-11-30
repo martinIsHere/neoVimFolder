@@ -43,7 +43,7 @@ nmap(
 nmap(
   "<leader>G",
   "<cmd>pwd<CR>",
-  "print current working directoy" 
+  "print current working directoy"
 )
 
 -- terminal
@@ -63,11 +63,26 @@ nmap(
   "Open terminal"
 )
 
--- split keybind
+-- split and tab keybinds
 nmap(
   "<leader>ts",
   "<cmd>tab split<CR>",
   "[T]ab-[S]plit current buffer"
+)
+nmap(
+  "<leader>tc",
+  "<cmd>tabclose<CR>",
+  "[T]ab-[C]lose current tab"
+)
+nmap(
+  "<leader>h",
+  "gT",
+  "Go to previous tab"
+)
+nmap(
+  "<leader>l",
+  "gt",
+  "Go to next tab"
 )
 nmap(
   "<leader>s",
