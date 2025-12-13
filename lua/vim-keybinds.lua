@@ -90,16 +90,16 @@ nmap(
   "gt",
   "Go to next tab"
 )
-nmap(
-  "<leader>s",
-  "<cmd>vsp<CR>",
-  "[S]plit vertically"
-)
-nmap(
-  "<leader>S",
-  "<cmd>sp<CR>",
-  "[S]plit horizontally"
-)
+-- nmap(
+--   "<leader>s",
+--   "<cmd>vsp<CR>",
+--   "[S]plit vertically"
+-- )
+-- nmap(
+--   "<leader>S",
+--   "<cmd>sp<CR>",
+--   "[S]plit horizontally"
+-- )
 
 -- quit buffer
 nmap(
@@ -173,6 +173,19 @@ nmap(
 	"<C-a>",
 	"ggVG",
 	"select all"
+)
+
+
+-- newline-command   <leader>n
+nmap(
+	"<leader>n",
+	"]<Space>",
+	"add space below"
+)
+nmap(
+	"<leader>N",
+	"[<Space>",
+	"add space above"
 )
 
 -- copy path to current buffer to system clipboard
