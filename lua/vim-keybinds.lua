@@ -43,7 +43,13 @@ nmap(
 nmap(
   "<leader>G",
   "<cmd>pwd<CR>",
-  "print current working directoy"
+  "print current working directoy" 
+)
+-- set cwd to parent dir of current file
+nmap(
+  "<leader>cd",
+  "<cmd>cd %:p:h<CR>",
+  "print current working directoy" 
 )
 
 -- terminal
@@ -117,6 +123,56 @@ nmap(
 	"<leader>cm",
 	":let @/ = ''<CR>:%s/\\r//g<CR>",
 	"Removes [C]opied line endings [M]^ from file."
+)
+
+-- centering
+nmap(
+	"n",
+	"nzz",
+	"next"
+)
+nmap(
+	"N",
+	"Nzz",
+	"previous"
+)
+nmap(
+	"<C-d>",
+	"<C-d>zz",
+	"down half"
+)
+nmap(
+	"<C-u>",
+	"<C-u>zz",
+	"up half"
+)
+nmap(
+	"<C-f>",
+	"<C-f>zz",
+	"down full"
+)
+nmap(
+	"<C-b>",
+	"<C-b>zz",
+	"down up"
+)
+nmap(
+	"<C-o>",
+	"<C-o>zz",
+	"out"
+)
+nmap(
+	"<C-i>",
+	"<C-i>zz",
+	"in"
+)
+
+-- ctrl-a
+pcall(vim.api.nvim_del_keymap, "n", "<C-a>")
+nmap(
+	"<C-a>",
+	"ggVG",
+	"select all"
 )
 
 -- copy path to current buffer to system clipboard

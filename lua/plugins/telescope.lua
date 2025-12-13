@@ -55,10 +55,11 @@ return {
 				defaults = {
 					layout_strategy = "vertical",
 					layout_config = {
-						height = 0.99,
-						width = 0.90,
-						preview_cutoff = 20,
-						preview_height = 0.2,
+            width = { padding = 0 },
+            height = { padding = 0 },
+            preview_height = 0.5,
+						-- preview_cutoff = 20,
+						-- preview_height = 0.2,
 					},
 				},
 			})

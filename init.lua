@@ -4,7 +4,7 @@ vim.g.mapleader = " "
 vim.opt.clipboard = "unnamedplus"
 
 -- set colorscheme
-vim.cmd[[colorscheme vim]]
+vim.cmd[[colorscheme torte]]
 
 -- setup lazy
 require("config.lazy")
