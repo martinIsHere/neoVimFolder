@@ -14,27 +14,16 @@ return {
       timeout = 3000,
     },
     picker = {
-      layout = function(picker)
-        -- Special layout for explorer
-        if picker.source == "explorer" then
-          return {
-            preset = "sidebar",
-            position = "left",
-            width = 40,
-          }
-        end
-  
-        -- Default layout for all other sources
-        return {
-          preset = "vertical",
-          fullscreen = true,
+      sources = {
+        default = {
           layout = {
-            width = 1.0,
-            height = 1.0,
+            layout = {
+              position = "right",
+            },
           },
-        }
-      end,    
+        },
       },
+    },
     quickfile = { enabled = true },
     scope = { enabled = true },
     scroll = { enabled = false },
