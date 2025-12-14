@@ -17,6 +17,24 @@ local vmap = function(key, func, _desc)
   )
 end
 
+local nmap_recursive = function(key, func, _desc)
+  vim.api.nvim_set_keymap(
+    "n",
+    key,
+    func,
+    { noremap = false, silent = true, desc = _desc }
+  )
+end
+
+local vmap_recursive = function(key, func, _desc)
+  vim.api.nvim_set_keymap(
+    "v",
+    key,
+    func,
+    { noremap = false, silent = true, desc = _desc }
+  )
+end
+
 -- vim.api.nvim_set_keymap("i", "jk", "<ESCAPE>", { noremap = true, silent = true })
 nmap("<leader>w", "<cmd>w<cr>", "[W]rite buffer")
 -- vim.api.nvim_set_keymap("n", "<leader>w", "<cmd>w<CR>", { noremap = true, silent = true, desc = "[W]rite buffer" })
@@ -43,13 +61,14 @@ nmap(
 nmap(
   "<leader>G",
   "<cmd>pwd<CR>",
-  "print current working directoy" 
+  "print current working directoy"
+
 )
 -- set cwd to parent dir of current file
 nmap(
   "<leader>cd",
   "<cmd>cd %:p:h<CR>",
-  "print current working directoy" 
+  "print current working directoy"
 )
 
 -- terminal
@@ -175,17 +194,16 @@ nmap(
 	"select all"
 )
 
-
--- newline-command   <leader>n
-nmap(
-	"<leader>n",
-	"]<Space>",
-	"add space below"
+-- recursive-bracket bind
+nmap_recursive(
+  "æ",
+  "]",
+  "æ -> ]"
 )
-nmap(
-	"<leader>N",
-	"[<Space>",
-	"add space above"
+nmap_recursive(
+  "Æ",
+  "[",
+  "æ -> ]"
 )
 
 -- copy path to current buffer to system clipboard
