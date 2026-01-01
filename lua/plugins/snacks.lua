@@ -7,7 +7,7 @@ return {
     bigfile = { enabled = true },
     dashboard = { enabled = true },
     explorer = { enabled = true },
-    indent = { enabled = true },
+    indent = { enabled = true, animate = { enabled = false } },
     input = { enabled = true },
     notifier = {
       enabled = true,
@@ -23,7 +23,7 @@ return {
             width = 40,
           }
         end
-  
+
         -- Default layout for all other sources
         return {
           preset = "vertical",
@@ -33,13 +33,13 @@ return {
             height = 1.0,
           },
         }
-      end,    
+      end,
       },
     quickfile = { enabled = true },
     scope = { enabled = true },
     scroll = { enabled = false },
     statuscolumn = { enabled = true },
-    words = { enabled = true },
+    words = { enabled = false },
     styles = {
       notification = {
         -- wo = { wrap = true } -- Wrap notifications

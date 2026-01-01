@@ -7,7 +7,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.cmd[[colorscheme lunaperche]]
 
 -- setup lazy
-require("config.lazy")
+require( "config.lazy" )
 
 -- Enable line numbers
 vim.opt.number = true
@@ -22,7 +22,7 @@ vim.opt.clipboard = "unnamedplus"
 
 vim.opt.encoding = "utf-8"
 
--- Use PowerShell Core if you have it (recommended)
+-- Use PowerShell Core if you have it ( recommended )
 vim.opt.shell = "pwsh.exe"  -- path usually on PATH as "pwsh.exe"
 
 -- Or use Windows PowerShell if you prefer
@@ -37,11 +37,11 @@ vim.opt.shellxquote = ""
 vim.opt.mouse = "a"
 
 
---require("user.plugins")
+--require( "user.plugins" )
 
 -- Enable syntax highlighting and colors
 vim.opt.termguicolors = true
-vim.cmd([[syntax on]])
+vim.cmd( [[syntax on]] )
 
 -- Persistent undo
 vim.opt.undofile = true
@@ -56,8 +56,8 @@ vim.opt.incsearch = true
 vim.opt.hlsearch = true
 
 
-require("vim-options")
-require("vim-keybinds")
+require( "vim-options" )
+require( "vim-keybinds" )
 
 -- Highlight the screen line of the cursor
 vim.opt.cursorline = true
@@ -66,15 +66,37 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 -- Map '¤' to '$' in normal, visual, select, and operator-pending modes
-vim.api.nvim_set_keymap('n', '\u{00A4}', '$', { noremap = true, silent = true }) -- Normal mode
-vim.api.nvim_set_keymap('v', '\u{00A4}', '$', { noremap = true, silent = true }) -- Visual mode
-vim.api.nvim_set_keymap('x', '\u{00A4}', '$', { noremap = true, silent = true }) -- Visual block mode
-vim.api.nvim_set_keymap('s', '\u{00A4}', '$', { noremap = true, silent = true }) -- Select mode
-vim.api.nvim_set_keymap('o', '\u{00A4}', '$', { noremap = true, silent = true }) -- Operator-pending mode
+vim.api.nvim_set_keymap( 'n', '\u{00A4}', '$', { noremap = true, silent = true } ) -- Normal mode
+vim.api.nvim_set_keymap( 'v', '\u{00A4}', '$', { noremap = true, silent = true } ) -- Visual mode
+vim.api.nvim_set_keymap( 'x', '\u{00A4}', '$', { noremap = true, silent = true } ) -- Visual block mode
+vim.api.nvim_set_keymap( 's', '\u{00A4}', '$', { noremap = true, silent = true } ) -- Select mode
+vim.api.nvim_set_keymap( 'o', '\u{00A4}', '$', { noremap = true, silent = true } ) -- Operator-pending mode
 
-vim.keymap.set('n', 'dil', "dd:let @+=matchlist(strtrans(@+),'[ ]*\\zs.*\\ze\\^@')[0]<CR>")
+vim.keymap.set( 'n', 'dil', "dd:let @+=matchlist(strtrans(@+ ),'[ ]*\\zs.*\\ze\\^@')[0]<CR>")
 
 -- Bind Alt + ø to Esc in Normal, Insert, and Visual modes
-vim.api.nvim_set_keymap('n', '<M-ø>', '<Esc>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '<M-ø>', '<Esc>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', '<M-ø>', '<Esc>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap( 'n', '<M-ø>', '<Esc>', { noremap = true, silent = true } )
+vim.api.nvim_set_keymap( 'i', '<M-ø>', '<Esc>', { noremap = true, silent = true } )
+vim.api.nvim_set_keymap( 'v', '<M-ø>', '<Esc>', { noremap = true, silent = true } )
+
+-- Make ø behave like ~ ( toggle case )
+vim.keymap.set( { "n", "v" }, "<S-ø>", "~h", { noremap = true, silent = true } )
+
+-- Shitty format
+vim.api.nvim_set_keymap(
+  'n',
+  '<leader>fq)',
+  '<CMD>%s/\\v\\((\\S[^ )]*\\S)\\)/( \\1 )/g<CR>',
+  { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>fq]",
+  "<CMD>%s/\\v\\[(\\S[^ ]*\\S)\\]/[ \\1 ]/g<CR>",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>fq}",
+  "<CMD>%s/\\v\\{(\\S[^ ]*\\S)\\}/{ \\1 }/g<CR>",
+  { noremap = true, silent = true }
+)
